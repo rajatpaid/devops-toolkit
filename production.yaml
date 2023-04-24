@@ -5,6 +5,9 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-lists: vfarcic/devops-toolkit
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
 spec:
   project: production
   source:
